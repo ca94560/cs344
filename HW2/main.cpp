@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
   your_gaussian_blur(h_inputImageRGBA, d_inputImageRGBA, d_outputImageRGBA, numRows(), numCols(),
                      d_redBlurred, d_greenBlurred, d_blueBlurred, filterWidth);
   timer.Stop();
-  cudaDeviceSynchronize(); checkCudaErrors(cudaGetLastError());
+  cudaDeviceSynchronize(); //checkCudaErrors(cudaGetLastError());
   int err = printf("%f msecs.\n", timer.Elapsed());
 
   if (err < 0) {
